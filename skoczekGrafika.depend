@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1651683266 source:c:\users\i5\downloads\codeblocks\projekty\skoczekgrafika\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<conio.h>
+	<allegro.h>
+

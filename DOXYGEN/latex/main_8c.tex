@@ -1,0 +1,252 @@
+\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include $<$allegro.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ border}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ getX} (int x)
+\item 
+int \textbf{ getY} (int x)
+\begin{DoxyCompactList}\small\item\em Fukcja daje mozliwosc usawienia X skoczka. \end{DoxyCompactList}\item 
+bool \textbf{ horseon\+Board} (int x, int \textbf{ y})
+\begin{DoxyCompactList}\small\item\em Fukcja daje mozliwosc usawienia Y skoczka. \end{DoxyCompactList}\item 
+void \textbf{ fill\+Board} (struct \textbf{ border} \textbf{ tablica}[8][8])
+\begin{DoxyCompactList}\small\item\em Sprawdza czy skoczek po ruchu znajduje sie na tablicy. \end{DoxyCompactList}\item 
+void \textbf{ fill\+Movelist} (int $\ast$tab)
+\item 
+bool \textbf{ check\+Pos} (int x, int \textbf{ y}, struct \textbf{ border} \textbf{ tablica}[8][8])
+\item 
+void \textbf{ move} (int $\ast$x, int $\ast$\textbf{ y}, int bufor, int param)
+\begin{DoxyCompactList}\small\item\em Dziala podobnie jak horseon\+Board ale sprawdza czy pole jest rowne 0. \end{DoxyCompactList}\item 
+bool \textbf{ check\+Param} (int i, int $\ast$move\+List)
+\begin{DoxyCompactList}\small\item\em Funkcja ruchu skoczka. \end{DoxyCompactList}\item 
+void \textbf{ printboard} (struct \textbf{ border} \textbf{ tablica}[8][8])
+\begin{DoxyCompactList}\small\item\em Sprawdza parametr ruchu skoczka. \end{DoxyCompactList}\item 
+int \textbf{ number\+Ofsquares} (int x, int \textbf{ y}, int number, struct \textbf{ border} \textbf{ tablica}[8][8])
+\begin{DoxyCompactList}\small\item\em Wypisuje tablice na ekranie. \end{DoxyCompactList}\item 
+void \textbf{ check\+Number} (int number, int $\ast$bufor, int move\+List, int $\ast$lowestnumber)
+\begin{DoxyCompactList}\small\item\em Sprawdza ilosc mozliwych przyszlych ruchow skoczka. \end{DoxyCompactList}\item 
+bool \textbf{ check\+If\+Lower} (int number, int lowest)
+\begin{DoxyCompactList}\small\item\em Ustawia parametry dla najmniejszych wartosci mozliwych przyszlych ruchow. \end{DoxyCompactList}\item 
+void \textbf{ set\+Cords} (struct \textbf{ border} \textbf{ tablica}[8][8])
+\begin{DoxyCompactList}\small\item\em Porownuje dwa parametry i wybiera mniejszy. \end{DoxyCompactList}\item 
+int \textbf{ main} ()
+\item 
+\textbf{ END\+\_\+\+OF\+\_\+\+MAIN} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \textbf{ size\+XY} = 8
+\item 
+const int \textbf{ board} = 64
+\item 
+const int \textbf{ forward} = 1
+\item 
+const int \textbf{ back} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{main_8c_acb0166b02bba61c63c0977f63d0ae301}} 
+\index{main.c@{main.c}!checkIfLower@{checkIfLower}}
+\index{checkIfLower@{checkIfLower}!main.c@{main.c}}
+\doxysubsubsection{checkIfLower()}
+{\footnotesize\ttfamily bool check\+If\+Lower (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{int}]{lowest }\end{DoxyParamCaption})}
+
+
+
+Ustawia parametry dla najmniejszych wartosci mozliwych przyszlych ruchow. 
+
+\mbox{\label{main_8c_a1079d935c0edcf6797431504ff0936e9}} 
+\index{main.c@{main.c}!checkNumber@{checkNumber}}
+\index{checkNumber@{checkNumber}!main.c@{main.c}}
+\doxysubsubsection{checkNumber()}
+{\footnotesize\ttfamily void check\+Number (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{int $\ast$}]{bufor,  }\item[{int}]{move\+List,  }\item[{int $\ast$}]{lowestnumber }\end{DoxyParamCaption})}
+
+
+
+Sprawdza ilosc mozliwych przyszlych ruchow skoczka. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Zwraca} & ilosc przyszlych ruchow \\
+\hline
+\end{DoxyRetVals}
+\mbox{\label{main_8c_a7eb052bd2564bcee6442f60a3a7046cf}} 
+\index{main.c@{main.c}!checkParam@{checkParam}}
+\index{checkParam@{checkParam}!main.c@{main.c}}
+\doxysubsubsection{checkParam()}
+{\footnotesize\ttfamily bool check\+Param (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int $\ast$}]{move\+List }\end{DoxyParamCaption})}
+
+
+
+Funkcja ruchu skoczka. 
+
+\mbox{\label{main_8c_ae107ebfe9dba64f2231955e8a2080453}} 
+\index{main.c@{main.c}!checkPos@{checkPos}}
+\index{checkPos@{checkPos}!main.c@{main.c}}
+\doxysubsubsection{checkPos()}
+{\footnotesize\ttfamily bool check\+Pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{struct \textbf{ border}}]{tablica[8][8] }\end{DoxyParamCaption})}
+
+\mbox{\label{main_8c_ae5ce30f43c1f65cf5e459ac242938867}} 
+\index{main.c@{main.c}!END\_OF\_MAIN@{END\_OF\_MAIN}}
+\index{END\_OF\_MAIN@{END\_OF\_MAIN}!main.c@{main.c}}
+\doxysubsubsection{END\_OF\_MAIN()}
+{\footnotesize\ttfamily END\+\_\+\+OF\+\_\+\+MAIN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{main_8c_ad36b0377cc32a6b6ffa958ee674c6cf9}} 
+\index{main.c@{main.c}!fillBoard@{fillBoard}}
+\index{fillBoard@{fillBoard}!main.c@{main.c}}
+\doxysubsubsection{fillBoard()}
+{\footnotesize\ttfamily void fill\+Board (\begin{DoxyParamCaption}\item[{struct \textbf{ border}}]{tablica[8][8] }\end{DoxyParamCaption})}
+
+
+
+Sprawdza czy skoczek po ruchu znajduje sie na tablicy. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Zwraca} & TRUE jezeli tak \\
+\hline
+{\em Zwraca} & FALSE jezeli wypadl poza plansze \\
+\hline
+\end{DoxyRetVals}
+\mbox{\label{main_8c_af8839d826fab454a0dc25d0dbc2f0e84}} 
+\index{main.c@{main.c}!fillMovelist@{fillMovelist}}
+\index{fillMovelist@{fillMovelist}!main.c@{main.c}}
+\doxysubsubsection{fillMovelist()}
+{\footnotesize\ttfamily void fill\+Movelist (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab }\end{DoxyParamCaption})}
+
+\mbox{\label{main_8c_a12fd77f09c8943e26f0cce020c9b829b}} 
+\index{main.c@{main.c}!getX@{getX}}
+\index{getX@{getX}!main.c@{main.c}}
+\doxysubsubsection{getX()}
+{\footnotesize\ttfamily int getX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+\mbox{\label{main_8c_adbaf12ec5b73c02ea3e01f4979091ecc}} 
+\index{main.c@{main.c}!getY@{getY}}
+\index{getY@{getY}!main.c@{main.c}}
+\doxysubsubsection{getY()}
+{\footnotesize\ttfamily int getY (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Fukcja daje mozliwosc usawienia X skoczka. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Zwraca} & wartosc X \\
+\hline
+\end{DoxyRetVals}
+\mbox{\label{main_8c_a2bc81cf7913ac85a8f4c1663e0dd31a1}} 
+\index{main.c@{main.c}!horseonBoard@{horseonBoard}}
+\index{horseonBoard@{horseonBoard}!main.c@{main.c}}
+\doxysubsubsection{horseonBoard()}
+{\footnotesize\ttfamily bool horseon\+Board (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Fukcja daje mozliwosc usawienia Y skoczka. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Zwraca} & wartosc Y \\
+\hline
+\end{DoxyRetVals}
+\mbox{\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{main_8c_a46cc549d824da41e4b1f2e88a1c0a603}} 
+\index{main.c@{main.c}!move@{move}}
+\index{move@{move}!main.c@{main.c}}
+\doxysubsubsection{move()}
+{\footnotesize\ttfamily void move (\begin{DoxyParamCaption}\item[{int $\ast$}]{x,  }\item[{int $\ast$}]{y,  }\item[{int}]{bufor,  }\item[{int}]{param }\end{DoxyParamCaption})}
+
+
+
+Dziala podobnie jak horseon\+Board ale sprawdza czy pole jest rowne 0. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Zwraca} & TRUE jezeli mozna skoczyc oraz uzytkownik nie odwiedzil pola \\
+\hline
+{\em Zwraca} & FALSE jezeli nie mozna skoczyc lub uzytkownik odwiedzil pole \\
+\hline
+\end{DoxyRetVals}
+\mbox{\label{main_8c_a3a7fc45461c9fbfe12ab2031140def06}} 
+\index{main.c@{main.c}!numberOfsquares@{numberOfsquares}}
+\index{numberOfsquares@{numberOfsquares}!main.c@{main.c}}
+\doxysubsubsection{numberOfsquares()}
+{\footnotesize\ttfamily int number\+Ofsquares (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{number,  }\item[{struct \textbf{ border}}]{tablica[8][8] }\end{DoxyParamCaption})}
+
+
+
+Wypisuje tablice na ekranie. 
+
+\mbox{\label{main_8c_a51b5071e973420a0adf574d50d808683}} 
+\index{main.c@{main.c}!printboard@{printboard}}
+\index{printboard@{printboard}!main.c@{main.c}}
+\doxysubsubsection{printboard()}
+{\footnotesize\ttfamily void printboard (\begin{DoxyParamCaption}\item[{struct \textbf{ border}}]{tablica[8][8] }\end{DoxyParamCaption})}
+
+
+
+Sprawdza parametr ruchu skoczka. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Zwraca} & TRUE jezeli parametr jest rowny 7 \\
+\hline
+{\em Zwraca} & FALSE jezeli nie jest rowny 7 \\
+\hline
+\end{DoxyRetVals}
+\mbox{\label{main_8c_a0be25d5a33ff181cf0658392dbdf3b97}} 
+\index{main.c@{main.c}!setCords@{setCords}}
+\index{setCords@{setCords}!main.c@{main.c}}
+\doxysubsubsection{setCords()}
+{\footnotesize\ttfamily void set\+Cords (\begin{DoxyParamCaption}\item[{struct \textbf{ border}}]{tablica[8][8] }\end{DoxyParamCaption})}
+
+
+
+Porownuje dwa parametry i wybiera mniejszy. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{main_8c_a5c6ded6d5cc5e72151d21d1fc27e436d}} 
+\index{main.c@{main.c}!back@{back}}
+\index{back@{back}!main.c@{main.c}}
+\doxysubsubsection{back}
+{\footnotesize\ttfamily const int back = -\/1}
+
+\mbox{\label{main_8c_a4a9c1cb206e42dfa4b9bacc89f43c413}} 
+\index{main.c@{main.c}!board@{board}}
+\index{board@{board}!main.c@{main.c}}
+\doxysubsubsection{board}
+{\footnotesize\ttfamily const int board = 64}
+
+\mbox{\label{main_8c_a3306c9c5ff698953a5e09ed57b4d3a61}} 
+\index{main.c@{main.c}!forward@{forward}}
+\index{forward@{forward}!main.c@{main.c}}
+\doxysubsubsection{forward}
+{\footnotesize\ttfamily const int forward = 1}
+
+\mbox{\label{main_8c_a91e1d2f027988a86e416c05bbd237d9f}} 
+\index{main.c@{main.c}!sizeXY@{sizeXY}}
+\index{sizeXY@{sizeXY}!main.c@{main.c}}
+\doxysubsubsection{sizeXY}
+{\footnotesize\ttfamily const int size\+XY = 8}
+
